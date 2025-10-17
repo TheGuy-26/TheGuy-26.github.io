@@ -13,9 +13,9 @@ export default function App(): React.JSX.Element {
                   <div>
                       <h1 className="text-2xl font-semibold mb-3">My Programming Projects</h1>
                       <ul className="list-none space-y-1">
-                          <li>
-                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/VotingSoftware" target="_blank" rel="noopener noreferrer">
-                                  School Election Software
+                        <li>
+                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/concurrent_virus_simulation/pulse" target="_blank" rel="noopener noreferrer">
+                                  Concurrent Virus Simulation
                               </a>
                           </li>
                           <li>
@@ -24,8 +24,8 @@ export default function App(): React.JSX.Element {
                               </a>
                           </li>
                           <li>
-                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/concurrent_virus_simulation/pulse" target="_blank" rel="noopener noreferrer">
-                                  Concurrent Virus Simulation
+                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/VotingSoftware" target="_blank" rel="noopener noreferrer">
+                                  School Election Software
                               </a>
                           </li>
                           <li>

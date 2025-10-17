@@ -4,12 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
-  <meta name="description" content="Simple portfolio with links to GitHub projects.">
+  <meta name="description" content="About me and my projects">
   <meta name="robots" content="index,follow">
+  <script>
+    (() => {
+      const getStoredTheme = localStorage.getItem('theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldBeDark = getStoredTheme? getStoredTheme === 'dark': preferredTheme;
+      if (shouldBeDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
 </head>
-<body class="bg-black text-white">
+<body class="bg-white text-black dark:bg-black dark:text-white">
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
 

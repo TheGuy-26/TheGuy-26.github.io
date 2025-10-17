@@ -4,36 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio</title>
-  <style>
-    :root { color-scheme: light dark; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; margin: 2rem; line-height: 1.6; }
-    .container { max-width: 680px; margin: 0 auto; }
-    .name { font-size: 1.75rem; font-weight: 600; margin-bottom: 1rem; }
-    ul { list-style: none; padding-left: 0; margin: 0; }
-    li { margin: 0.25rem 0; }
-    a { text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
   <meta name="description" content="Simple portfolio with links to GitHub projects.">
   <meta name="robots" content="index,follow">
 </head>
-<body>
-  <main class="container">
-    <div class="projects">
-        <div class="About Me">
-            Hello there, I am Dujana. I am a 4th semester student at Saarland University.
-        </div>
-        <br>
-        <br>
-        <div class="name">My Programming Projects</div>
-        <ul>
-            <li><a href="https://github.com/TheGuy-26/VotingSoftware" target="_blank" rel="noopener noreferrer">School Election Software</a></li>
-            <li><a href="https://github.com/TheGuy-26/MiniOCaml" target="_blank" rel="noopener noreferrer">Mini OCaml Compiler</a></li>
-            <li><a href="https://github.com/TheGuy-26/concurrent_virus_simulation/pulse" target="_blank" rel="noopener noreferrer">Concurrent Virus Simulation</a></li>
-            <li><a href="" target="" rel="">and many more...</a></li>
-        </ul>
-    </div>
-  </main>
+<body class="bg-black text-white">
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
 

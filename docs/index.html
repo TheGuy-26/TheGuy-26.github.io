@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="About me and my projects">
+  <meta name="robots" content="index,follow">
+  <script>
+    (() => {
+      const getStoredTheme = localStorage.getItem('theme');
+      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const shouldBeDark = getStoredTheme? getStoredTheme === 'dark': preferredTheme;
+      if (shouldBeDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-B0aGIKY9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-xzzFUNPs.css">
+</head>
+<body class="bg-white text-black dark:bg-black dark:text-white">
+  <div id="root"></div>
+</body>
+</html>
+
+

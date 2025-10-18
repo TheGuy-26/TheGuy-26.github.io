@@ -16,19 +16,34 @@ export default function App(): React.JSX.Element {
                   <div>
                       <h1 className="text-2xl font-semibold mb-3"> {t.projects} </h1>
                       <ul className="list-none space-y-1">
-                        <li>
+                          <li>
                               <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/concurrent_virus_simulation/" target="_blank" rel="noopener noreferrer">
-                                  Concurrent Virus Simulation
+                                  { t.concurrent_project }
+                              </a>
+                          </li>
+                          <li>
+                              <a className="text-blue-600 hover:underline" href="https://github.com/ariv00001/BDE" target="_blank" rel="noopener noreferrer">
+                                  { t.bde_project }
+                              </a>
+                          </li>
+                          <li>
+                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/sysarch-project-1" target="_blank" rel="noopener noreferrer">
+                                  { t.sys1 }
+                              </a>
+                          </li>
+                          <li>
+                              <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/sysarch-project-2" target="_blank" rel="noopener noreferrer">
+                                  { t.sys2 }
                               </a>
                           </li>
                           <li>
                               <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/MiniOCaml" target="_blank" rel="noopener noreferrer">
-                                  Mini OCaml Compiler
+                                  { t.prog1 }
                               </a>
                           </li>
                           <li>
                               <a className="text-blue-600 hover:underline" href="https://github.com/TheGuy-26/VotingSoftware" target="_blank" rel="noopener noreferrer">
-                                  School Election Software
+                                  { t.election_software }
                               </a>
                           </li>
                           <li>

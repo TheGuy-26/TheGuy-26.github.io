@@ -5,10 +5,10 @@ export default function App(): React.JSX.Element {
   return (
       <>
           <Header />
-          <main className="min-h-screen bg-white text-slate-900 dark:bg-black dark:text-white mx-auto max-w-[680px] p-8 leading-relaxed">
+          <main className="min-h-screen bg-white text-slate-900 dark:bg-black dark:text-white mx-auto p-8 leading-relaxed">
               <section className="space-y-6">
                   <p className="text-base">
-                      Hello there, I am <span className="font-semibold">Dujana</span>. I am a 4th semester student at Saarland University.
+                      Hello there, I am a 4th semester student at Saarland University.
                   </p>
                   <div>
                       <h1 className="text-2xl font-semibold mb-3">My Programming Projects</h1>

@@ -2,12 +2,30 @@ import {useEffect, useState} from "react";
 
 function getInitialTheme(): 'light' | 'dark' {
     try {
-        const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
-        if (stored === 'dark' || stored === 'light') return stored;
+        const storedTheme = typeof window !== 'undefined'? localStorage.getItem('theme'): null;
+        if (storedTheme === 'dark' || storedTheme === 'light') return storedTheme;
         const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         return prefersDark ? 'dark' : 'light';
     } catch {
         return 'light';
+    }
+}
+
+function getInitialLanguage(): 'en' | 'ge' {
+    try {
+        // checks in the browser local storage (user's explicit choice. p.s.: local storage is domain specific )
+        const storedLang = typeof window !== 'undefined'? localStorage.getItem('language'): null;
+        if (storedLang === 'en' || storedLang === 'ge') return storedLang;
+
+        // checks for user preferred language in the browser
+        const primaryLanguage = typeof window !== 'undefined' && navigator.language? navigator.language : 'en';
+
+        if (primaryLanguage.startsWith('de')) return 'ge'
+
+        return 'en'
+    }
+    catch {
+        return 'en';
     }
 }
 
@@ -28,19 +46,50 @@ export function useTheme() {
     return { theme, toggle };
 }
 
+export function useLanguage() {
+    const [language, setLanguage] = useState<'en' | 'ge'>(getInitialLanguage);
+
+    useEffect(() => {
+        try {
+            localStorage.setItem('language', language);
+        }
+        catch {
+            // ignoring write errors
+        }
+    }, [language]);
+
+    const toggle = () => setLanguage(l => (l === 'en' ? 'ge' : 'en'));
+    return { language, toggle };
+}
+
 // In your App:
-export default function Header() {
-    const { theme, toggle } = useTheme();
+interface HeaderProps {
+    language: 'en' | 'ge';
+    toggleLanguage: () => void;
+}
+
+export default function Header({ language, toggleLanguage }: HeaderProps) {
+    const { theme, toggle: toggleTheme } = useTheme();
+
     return (
         <header className="flex items-center justify-between px-5 py-5 bg-white text-black dark:bg-black dark:text-white">
             <h1 className="text-lg">Dujana Abrar</h1>
-            <button
-                type="button"
-                onClick={toggle}
-                aria-pressed={theme === 'dark'}
-                aria-label="Toggle dark mode"
-                className="inline-flex items-center gap-2 rounded px-3 py-1.5"
-            >
+            <div className="flex items-center gap-2">
+                <button
+                    type="button"
+                    onClick={toggleLanguage}
+                    aria-label="Toggle language"
+                    className="px-3 py-1.5"
+                >
+                    {language === 'en'? 'DE': 'EN'}
+                </button>
+                <button
+                    type="button"
+                    onClick={toggleTheme}
+                    aria-pressed={theme === 'dark'}
+                    aria-label="Toggle dark mode"
+                    className="px-3 py-1.5"
+                >
                 {theme === 'dark' ?
                     (
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -54,7 +103,8 @@ export default function Header() {
                         </svg>
                     )
                 }
-            </button>
+                </button>
+            </div>
         </header>
     );
 }

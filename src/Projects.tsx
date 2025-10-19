@@ -70,7 +70,7 @@ export default function Projects({ language }: ProjectProps) {
             setTimeout(() => {
                 stickyElementRef.current?.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "start",
                 });
             }, SCROLL_DELAY_MS);
         }

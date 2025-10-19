@@ -176,7 +176,7 @@ export default function Projects({ language }: ProjectProps) {
                 <div ref={stickyElementRef} className="lg:sticky lg:top-4 lg:h-fit">
                     {selectedProject ? (
                         <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                            <p className="text-gray-700 dark:text-gray-300 mb-4">
+                            <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">
                                 {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
                             </p>
 

@@ -43,11 +43,11 @@ const SKILL_CATEGORIES = {
     },
     backend: {
         label: { en: 'Backend and Databases', ge: 'Backend und Datenbanken' },
-        skills: 'PostgreSQL / Express.js / Node.js'
+        skills: 'PostgreSQL'
     },
     tools: {
         label: { en: 'Tools and Platforms', ge: 'Tools und Plattformen' },
-        skills: 'NextAuth.js / Github / Git / Selenium'
+        skills: 'Github / Git / Selenium'
     },
     web: {
         label: { en: 'Web Developments and Frameworks', ge: 'Webentwicklung und Frameworks' },

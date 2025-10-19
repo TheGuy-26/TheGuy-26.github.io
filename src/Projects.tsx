@@ -20,6 +20,43 @@ const SKILL_COLORS = {
     scala: "text-red-700 dark:text-red-300 font-semibold",
     chisel: "text-purple-600 dark:text-purple-400 font-semibold",
     "risc-v": "text-indigo-600 dark:text-indigo-400 font-semibold",
+    kotlin: "text-purple-700 dark:text-purple-300 font-semibold",
+    c: "text-cyan-600 dark:text-cyan-400 font-semibold",
+    mips: "text-teal-600 dark:text-teal-400 font-semibold",
+    postgresql: "text-blue-800 dark:text-blue-300 font-semibold",
+    "express.js": "text-gray-700 dark:text-gray-300 font-semibold",
+    "node.js": "text-green-600 dark:text-green-400 font-semibold",
+    "nextauth.js": "text-purple-500 dark:text-purple-300 font-semibold",
+    github: "text-gray-800 dark:text-gray-200 font-semibold",
+    git: "text-orange-700 dark:text-orange-400 font-semibold",
+    react: "text-cyan-500 dark:text-cyan-400 font-semibold",
+    "next.js": "text-black dark:text-white font-semibold",
+    "tailwind css": "text-cyan-600 dark:text-cyan-400 font-semibold",
+    selenium: "text-green-700 dark:text-green-400 font-semibold",
+};
+
+// skill categories
+const SKILL_CATEGORIES = {
+    languages: {
+        label: { en: 'Languages and Frameworks', ge: 'Programmiersprachen und Frameworks' },
+        skills: 'Java / Rust / Kotlin / Javascript / Python / C / Scala / Chisel / OCaml / MIPS'
+    },
+    backend: {
+        label: { en: 'Backend and Databases', ge: 'Backend und Datenbanken' },
+        skills: 'PostgreSQL / Express.js / Node.js'
+    },
+    tools: {
+        label: { en: 'Tools and Platforms', ge: 'Tools und Plattformen' },
+        skills: 'NextAuth.js / Github / Git'
+    },
+    web: {
+        label: { en: 'Web Developments and Frameworks', ge: 'Webentwicklung und Frameworks' },
+        skills: 'React / Next.js / Tailwind CSS / Django'
+    },
+    testing: {
+        label: { en: 'Testing & QA Tools', ge: 'Test- und QA-Tools' },
+        skills: 'Selenium'
+    }
 };
 
 export default function Projects({ language }: ProjectProps) {
@@ -30,37 +67,37 @@ export default function Projects({ language }: ProjectProps) {
     const projects = [
         {
             id: 'conc',
-            name: t.concurrent,
+            name: t.project_list.concurrent,
             url: 'https://github.com/TheGuy-26/concurrent_virus_simulation/',
             skills: ['rust']
         },
         {
             id: 'bde',
-            name: t.bde,
+            name: t.project_list.bde,
             url: 'https://github.com/ariv00001/BDE',
             skills: ['python', 'django']
         },
         {
             id: 'sys1',
-            name: t.sys1,
+            name: t.project_list.sys1,
             url: 'https://github.com/TheGuy-26/sysarch-project-1',
             skills: ['scala', 'chisel']
         },
         {
             id: 'sys2',
-            name: t.sys2,
+            name: t.project_list.sys2,
             url: 'https://github.com/TheGuy-26/sysarch-project-2',
             skills: ['RISC-V']
         },
         {
             id: 'ocaml',
-            name: t.prog1,
+            name: t.project_list.prog1,
             url: 'https://github.com/TheGuy-26/MiniOCaml',
             skills: ['ocaml']
         },
         {
             id: 'election',
-            name: t.election_software,
+            name: t.project_list.election_software,
             url: 'https://github.com/TheGuy-26/VotingSoftware',
             skills: ['java']
         }
@@ -85,10 +122,36 @@ export default function Projects({ language }: ProjectProps) {
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="space-y-8">
+            {/* Skills showcase section */}
+            <div>
+                <h2 className="text-xl font-semibold"> {t.skills}: </h2>
+                <div className={`space-y-2`}>
+                    {Object.entries(SKILL_CATEGORIES).map(([key, category]) => (
+                        <div key={key}>
+                            <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
+                                {category.label[language]}
+                            </h3>
+                            <div className="flex flex-wrap gap-4">
+                                {category.skills.split(' / ').map((skill, idx) => (
+                                    <span
+                                        key={idx}
+                                        className={`${getSkillColor(skill.toLowerCase())} text-sm px-3 py-2 rounded-full bg-gray-200 dark:bg-gray-700`}
+                                    >
+                                    { skill }
+                                </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Projects section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* left columns */}
             <div className="space-y-4">
-                <h2 className="text-xl font-semibold"> {t.projects} </h2>
+                <h2 className="text-xl font-semibold"> {t.projects}: </h2>
                 <ul className="space-y-2">
                     {projects.map((project) => (
                         <li key={project.id}>
@@ -104,9 +167,6 @@ export default function Projects({ language }: ProjectProps) {
                             </button>
                         </li>
                     ))}
-                    <li>
-                        <span className="text-gray-600 dark:text-gray-300">{t.more}</span>
-                    </li>
                 </ul>
             </div>
 
@@ -116,24 +176,27 @@ export default function Projects({ language }: ProjectProps) {
                 <div ref={stickyElementRef} className="lg:sticky lg:top-4 lg:h-fit">
                     {selectedProject ? (
                         <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                            <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">
+                            <p className="text-gray-700 dark:text-gray-300 mb-4">
                                 {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
                             </p>
+
+                            {/* Skills section */}
                             <div className="mb-4">
                                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                                     {language === 'en' ? 'Skills:' : 'Fähigkeiten:'}
                                 </p>
-                                <div className="flex flex-wrap gap-2">
-                                    { projects.find(p => p.id === selectedProject)?.skills.map((skill, i) => (
+                                <div className="flex flex-wrap gap-3">
+                                    {projects.find(p => p.id === selectedProject)?.skills.map((skill, idx) => (
                                         <span
-                                        key={i}
-                                        className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
+                                            key={idx}
+                                            className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
                                         >
-                                            { skill.charAt(0).toUpperCase() + skill.slice(1) }
+                                            {skill.charAt(0).toUpperCase() + skill.slice(1)}
                                         </span>
-                                    )) }
+                                    ))}
                                 </div>
                             </div>
+
                             <a
                                 href={projects.find(p => p.id === selectedProject)?.url}
                                 target="_blank"
@@ -148,6 +211,7 @@ export default function Projects({ language }: ProjectProps) {
                             {language === 'en' ? 'Select a project to view details' : 'Wählen Sie ein Projekt aus, um Details anzuzeigen'}
                         </div>
                     )}
+                    </div>
                 </div>
             </div>
         </div>

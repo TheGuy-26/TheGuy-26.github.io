@@ -16,6 +16,10 @@ const SKILL_COLORS = {
     python: "text-blue-600 dark:text-blue-400 font-semibold",
     javascript: "text-yellow-600 dark:text-yellow-500 font-semibold",
     ocaml: "text-blue-700 dark:text-blue-300 font-semibold",
+    django: "text-green-700 dark:text-green-400 font-semibold",
+    scala: "text-red-700 dark:text-red-300 font-semibold",
+    chisel: "text-purple-600 dark:text-purple-400 font-semibold",
+    "risc-v": "text-indigo-600 dark:text-indigo-400 font-semibold",
 };
 
 export default function Projects({ language }: ProjectProps) {

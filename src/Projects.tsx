@@ -1,12 +1,17 @@
-import {useState} from "react";
-import {translations} from "./translations";
+import { useState, useRef } from "react";
+import { translations } from "./translations";
 
 interface ProjectProps {
     language: 'en' | 'ge'
 }
 
+// Constants
+const SCROLL_DELAY_MS = 100;
+const MOBILE_BREAKPOINT = 1024;
+
 export default function Projects({ language }: ProjectProps) {
     const [selectedProject, setSelectedProject] = useState<string | null>(null);
+    const stickyElementRef = useRef<HTMLDivElement>(null);
     const t = translations[language];
 
     const projects = [
@@ -42,6 +47,20 @@ export default function Projects({ language }: ProjectProps) {
         }
     ];
 
+    const handleProjectSelect = (projectId: string) => {
+        setSelectedProject(projectId);
+
+        // scroll on mobile
+        if (window.innerWidth < MOBILE_BREAKPOINT) {
+            setTimeout(() => {
+                stickyElementRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }, SCROLL_DELAY_MS);
+        }
+    };
+
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* left columns */}
@@ -49,18 +68,18 @@ export default function Projects({ language }: ProjectProps) {
                 <h2 className="text-xl font-semibold"> {t.projects} </h2>
                 <ul className="space-y-2">
                     {projects.map((project) => (
-                    <li key={project.id}>
-                        <button
-                            onClick={() => setSelectedProject(project.id)}
-                            className={`w-full text-left p-3 rounded border transition-colors ${
-                            selectedProject === project.id
-                            ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
-                            : 'hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
-                        }`}
-                        >
-                            <div className="font-medium">{project.name}</div>
-                        </button>
-                    </li>
+                        <li key={project.id}>
+                            <button
+                                onClick={() => handleProjectSelect(project.id)}
+                                className={`w-full text-left p-3 rounded border transition-colors ${
+                                    selectedProject === project.id
+                                        ? 'bg-blue-100 dark:bg-blue-900 border-blue-300 dark:border-blue-700'
+                                        : 'hover:bg-gray-100 dark:hover:bg-gray-800 border-gray-200 dark:border-gray-700'
+                                }`}
+                            >
+                                <div className="font-medium">{project.name}</div>
+                            </button>
+                        </li>
                     ))}
                     <li>
                         <span className="text-gray-600 dark:text-gray-300">{t.more}</span>
@@ -71,7 +90,7 @@ export default function Projects({ language }: ProjectProps) {
             {/* right columns */}
             <div className="space-y-4">
                 <h2 className="text-xl font-semibold opacity-0"> {t.projects} </h2>
-                <div className="lg:sticky lg:top-4 lg:h-fit">
+                <div ref={stickyElementRef} className="lg:sticky lg:top-4 lg:h-fit">
                     {selectedProject ? (
                         <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
                             <p className="text-gray-700 dark:text-gray-300 mb-4">

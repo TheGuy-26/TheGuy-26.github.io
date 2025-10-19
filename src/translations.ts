@@ -10,12 +10,12 @@ export const translations = {
       election_software: "School Election Management Software",
       more: "and more...",
       project_descriptions: {
-          concurrent: "Made a concurrent virus simulation in rust",
+          conc: "Made a concurrent virus simulation in rust",
           bde: "A simple social media project made in Django",
           sys1: "Made simple circuits designs",
           sys2: "Made a simple OS and paint program",
-          prog1: "Made a simple compiler",
-          election_software: "An election software",
+          ocaml: "Made a simple compiler",
+          election: "An election software",
       }
   },
 
@@ -30,12 +30,12 @@ export const translations = {
     election_software: "Software für Schulwahlen",
     more: "und mehr...",
     project_descriptions: {
-          concurrent: "Made a concurrent virus simulation in rust",
+          conc: "Made a concurrent virus simulation in rust",
           bde: "A simple social media project made in Django",
           sys1: "Made simple circuits designs",
           sys2: "Made a simple OS and paint program",
-          prog1: "Made a simple compiler",
-          election_software: "An election software",
+          ocaml: "Made a simple compiler",
+          election: "An election software",
     }
   }
 };

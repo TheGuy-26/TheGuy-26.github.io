@@ -47,15 +47,11 @@ const SKILL_CATEGORIES = {
     },
     tools: {
         label: { en: 'Tools and Platforms', ge: 'Tools und Plattformen' },
-        skills: 'NextAuth.js / Github / Git'
+        skills: 'NextAuth.js / Github / Git / Selenium'
     },
     web: {
         label: { en: 'Web Developments and Frameworks', ge: 'Webentwicklung und Frameworks' },
         skills: 'React / Next.js / Tailwind CSS / Django'
-    },
-    testing: {
-        label: { en: 'Testing & QA Tools', ge: 'Test- und QA-Tools' },
-        skills: 'Selenium'
     }
 };
 

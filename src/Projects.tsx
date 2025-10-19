@@ -9,6 +9,15 @@ interface ProjectProps {
 const SCROLL_DELAY_MS = 100;
 const MOBILE_BREAKPOINT = 1024;
 
+// skill colors
+const SKILL_COLORS = {
+    rust: "text-red-600 dark:text-red-400 font-semibold",
+    java: "text-orange-600 dark:text-orange-400 font-semibold",
+    python: "text-blue-600 dark:text-blue-400 font-semibold",
+    javascript: "text-yellow-600 dark:text-yellow-500 font-semibold",
+    ocaml: "text-blue-700 dark:text-blue-300 font-semibold",
+};
+
 export default function Projects({ language }: ProjectProps) {
     const [selectedProject, setSelectedProject] = useState<string | null>(null);
     const stickyElementRef = useRef<HTMLDivElement>(null);
@@ -18,32 +27,38 @@ export default function Projects({ language }: ProjectProps) {
         {
             id: 'conc',
             name: t.concurrent,
-            url: 'https://github.com/TheGuy-26/concurrent_virus_simulation/'
+            url: 'https://github.com/TheGuy-26/concurrent_virus_simulation/',
+            skills: ['rust']
         },
         {
             id: 'bde',
             name: t.bde,
-            url: 'https://github.com/ariv00001/BDE'
+            url: 'https://github.com/ariv00001/BDE',
+            skills: ['python', 'django']
         },
         {
             id: 'sys1',
             name: t.sys1,
-            url: 'https://github.com/TheGuy-26/sysarch-project-1'
+            url: 'https://github.com/TheGuy-26/sysarch-project-1',
+            skills: ['scala', 'chisel']
         },
         {
             id: 'sys2',
             name: t.sys2,
-            url: 'https://github.com/TheGuy-26/sysarch-project-2'
+            url: 'https://github.com/TheGuy-26/sysarch-project-2',
+            skills: ['RISC-V']
         },
         {
             id: 'ocaml',
             name: t.prog1,
-            url: 'https://github.com/TheGuy-26/MiniOCaml'
+            url: 'https://github.com/TheGuy-26/MiniOCaml',
+            skills: ['ocaml']
         },
         {
             id: 'election',
             name: t.election_software,
-            url: 'https://github.com/TheGuy-26/VotingSoftware'
+            url: 'https://github.com/TheGuy-26/VotingSoftware',
+            skills: ['java']
         }
     ];
 
@@ -59,6 +74,10 @@ export default function Projects({ language }: ProjectProps) {
                 });
             }, SCROLL_DELAY_MS);
         }
+    };
+
+    const getSkillColor = (skill: string) => {
+        return SKILL_COLORS[skill as keyof typeof SKILL_COLORS] || "text-gray-600 dark:text-gray-400 font-semibold";
     };
 
     return (
@@ -96,6 +115,21 @@ export default function Projects({ language }: ProjectProps) {
                             <p className="text-gray-700 dark:text-gray-300 mb-4">
                                 {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
                             </p>
+                            <div className="mb-4">
+                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                    {language === 'en' ? 'Skills:' : 'Fähigkeiten:'}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    { projects.find(p => p.id === selectedProject)?.skills.map((skill, i) => (
+                                        <span
+                                        key={i}
+                                        className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
+                                        >
+                                            { skill.charAt(0).toUpperCase() + skill.slice(1) }
+                                        </span>
+                                    )) }
+                                </div>
+                            </div>
                             <a
                                 href={projects.find(p => p.id === selectedProject)?.url}
                                 target="_blank"

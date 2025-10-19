@@ -126,7 +126,7 @@ export default function Projects({ language }: ProjectProps) {
             {/* Skills showcase section */}
             <div>
                 <h2 className="text-xl font-semibold"> {t.skills}: </h2>
-                <div className={`space-y-2`}>
+                <div className={`space-y-4`}>
                     {Object.entries(SKILL_CATEGORIES).map(([key, category]) => (
                         <div key={key}>
                             <h3 className="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">

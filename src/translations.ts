@@ -4,13 +4,12 @@ export const translations = {
       skills: "Skills",
       projects: "My Programming Projects",
       project_list: {
-          concurrent: "Concurrent Virus Spread Simulation",
-          bde: "Mini Social Media Platform",
-          sys1: "Digital Circuit Design",
-          sys2: "Simple Operating System and Paint Application",
-          prog1: "Mini OCaml Compiler",
-          election_software: "School Election Management Software",
-          more: "and more...",
+          concurrent: "Agent-Based Virus Simulation",
+          bde: "Social Network with Reputation System",
+          sys1: "Hardware Design with Chisel – Bit Manipulation and RISC-V Extension",
+          sys2: "System Programming and Exception Handling on RISC-V",
+          prog1: "MiniOCaml – Interpreter for a Functional Language",
+          election_software: "School Election Management System",
       },
       project_descriptions: {
           conc: "In this proejct we developed an agent-based simulation model to predict the spread of the fictional Pincer Pox virus. The system models individual agents moving in a 2D grid, each with infection states (susceptible, infected, infectious, recovered). It simulates behavior such as movement, coughing, breathing, and virus transmission within a defined radius.\n\n"+
@@ -44,13 +43,12 @@ export const translations = {
     skills: "Fähigkeiten",
     projects: "Meine Programmierprojekte",
     project_list: {
-        concurrent: "Simulation der gleichzeitigen Virusausbreitung",
-        bde: "Mini-Soziale-Medien-Plattform",
-        sys1: "Digitale Schaltungsentwicklung",
-        sys2: "Einfaches Betriebssystem und Zeichenanwendung",
-        prog1: "Mini-OCaml-Compiler",
-        election_software: "Software für Schulwahlen",
-        more: "und mehr...",
+        concurrent: "Agentenbasierte Virus-Simulation",
+        bde: "Soziales Netzwerk mit Reputationssystem",
+        sys1: "Hardware-Design mit Chisel – Bit-Manipulation und RISC-V-Erweiterung",
+        sys2: "Systemprogrammierung und Ausnahmebehandlung auf RISC-V",
+        prog1: "MiniOCaml – Interpreter für funktionale Sprache",
+        election_software: "School Election Management System",
     },
       project_descriptions: {
           conc: "In diesem Projekt haben wir ein agentenbasiertes Simulationsmodell entwickelt, um die Ausbreitung des fiktiven Virus Pincer Pox vorherzusagen. Das System modelliert einzelne Agenten, die sich auf einem 2D-Raster bewegen und verschiedene Infektionszustände haben (empfänglich, infiziert, ansteckend, genesen). Es simuliert Verhalten wie Bewegung, Husten, Atmen und die Virusübertragung in einem bestimmten Radius.\n\n" +

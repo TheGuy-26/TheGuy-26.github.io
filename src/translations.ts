@@ -10,6 +10,7 @@ export const translations = {
           sys2: "System Programming and Exception Handling on RISC-V",
           prog1: "MiniOCaml – Interpreter for a Functional Language",
           election_software: "School Election Management System",
+          sopra24: "Ocean Cleanup Simulation"
       },
       project_descriptions: {
           conc: "In this proejct we developed an agent-based simulation model to predict the spread of the fictional Pincer Pox virus. The system models individual agents moving in a 2D grid, each with infection states (susceptible, infected, infectious, recovered). It simulates behavior such as movement, coughing, breathing, and virus transmission within a defined radius.\n\n"+
@@ -35,6 +36,10 @@ export const translations = {
           election: "The School Election Management System is a JavaFX-based desktop application developed as a hobby project to streamline the process of conducting school elections. It allows administrators to register voters, manage candidates, and handle multiple election positions within a single interface. The software enables secure vote casting and automatically " +
               "calculates and displays election results once voting concludes. \n\n" +
               "All election data, including voter records and results, are stored in an SQL database, ensuring accuracy and persistence across sessions. The project was designed with a focus on both usability and learning, providing practical experience with JavaFX for GUI development, SQL for database integration, and core object-oriented programming principles in Java.",
+          sopra24: "In this group project, we designed and implemented a simulation called “Ocean Cleanup: Save the Saardines”, where multiple corporations deploy fleets of ships to clean different types of ocean garbage. Working in a team of 5–7 members, we developed the simulator from scratch—starting with system design, UML diagrams, and state modeling, and moving to " +
+              "full implementation and testing. The simulation features a hex-tiled ocean map with garbage, ships, corporations, events, and realistic behaviors such as movement, collection, and resource management.\n\n We focused on clean architecture, collaborative development, and high-quality code, supported by unit, integration, and system testing. The project emphasized " +
+              "adaptability by requiring our design to handle mid-project specification changes and included strict submission, tooling, and documentation standards. Through this, we gained practical experience in software engineering workflows, simulation modeling, teamwork, and rigorous testing practices.\n\n " +
+              "Project developed as part of university coursework (code not publicly available)"
       }
   },
 
@@ -49,6 +54,7 @@ export const translations = {
         sys2: "Systemprogrammierung und Ausnahmebehandlung auf RISC-V",
         prog1: "MiniOCaml – Interpreter für funktionale Sprache",
         election_software: "School Election Management System",
+        sopra24: "Ozean-Reinigungs-Simulation"
     },
       project_descriptions: {
           conc: "In diesem Projekt haben wir ein agentenbasiertes Simulationsmodell entwickelt, um die Ausbreitung des fiktiven Virus Pincer Pox vorherzusagen. Das System modelliert einzelne Agenten, die sich auf einem 2D-Raster bewegen und verschiedene Infektionszustände haben (empfänglich, infiziert, ansteckend, genesen). Es simuliert Verhalten wie Bewegung, Husten, Atmen und die Virusübertragung in einem bestimmten Radius.\n\n" +
@@ -70,6 +76,9 @@ export const translations = {
 
           election: "Das School Election Management System ist eine JavaFX-basierte Desktop-Anwendung, die als Hobbyprojekt entwickelt wurde, um den Ablauf von Schulwahlen zu vereinfachen. Administratoren können Wähler registrieren, Kandidaten verwalten und mehrere Wahlpositionen über eine gemeinsame Benutzeroberfläche organisieren. Die Software ermöglicht sicheres Abstimmen und berechnet sowie zeigt die Wahlergebnisse automatisch nach Abschluss der Abstimmung an.\n\n" +
               "Alle Wahldaten, einschließlich Wählerlisten und Ergebnisse, werden in einer SQL-Datenbank gespeichert, was Genauigkeit und Beständigkeit über mehrere Sitzungen hinweg gewährleistet. Das Projekt wurde mit Fokus auf Benutzerfreundlichkeit und Lernen entwickelt und bot praktische Erfahrungen mit JavaFX für GUI-Entwicklung, SQL-Integration und objektorientierter Programmierung in Java.",
+          sopra24: "In diesem Gruppenprojekt entwickelten wir eine Simulation namens „Ocean Cleanup: Save the Saardines“, bei der verschiedene Firmen mit ihren Schiffen versuchen, den Ozean von Müll zu befreien. In einem Team von 5–7 Personen planten wir zuerst das System mit UML-Diagrammen und einem Ablaufplan und setzten es dann komplett um. Die Simulation läuft auf einer Karte aus sechseckigen Feldern (Hex-Feldern), auf denen Müll, Schiffe, Firmen und Ereignisse platziert sind. " +
+              "Die Schiffe bewegen sich, sammeln Müll ein und müssen Ressourcen wie Treibstoff beachten.\n\n Wir legten viel Wert auf eine saubere Software-Struktur, Zusammenarbeit im Team und gute Code-Qualität mit Unit-, Integrations- und Systemtests. Außerdem musste unser Design so flexibel sein, dass es nachträgliche Änderungen in der Aufgabenstellung aufnehmen konnte. Durch dieses Projekt sammelte ich praktische Erfahrungen in Softwareentwicklung, Simulationen, Teamarbeit und professionellem Testen.\n\n " +
+              "Im Rahmen eines Universitätsprojekts entwickelt (Code nicht öffentlich zugänglich)"
       }
   }
 };

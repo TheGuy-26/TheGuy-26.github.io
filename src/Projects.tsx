@@ -62,6 +62,11 @@ export default function Projects({ language }: ProjectProps) {
 
     const projects = [
         {
+            id: 'sopra24',
+            name: t.project_list.sopra24,
+            skills: ['kotlin', 'system-testing', 'unit-testing', 'integration-testing']
+        },
+        {
             id: 'conc',
             name: t.project_list.concurrent,
             url: 'https://github.com/TheGuy-26/concurrent_virus_simulation/',

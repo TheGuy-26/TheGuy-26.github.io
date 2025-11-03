@@ -48,7 +48,7 @@ const SKILL_COLORS = {
 const SKILL_CATEGORIES = {
     languages: {
         label: { en: 'Languages and Frameworks', ge: 'Programmiersprachen und Frameworks' },
-        skills: 'Java / Rust / Kotlin / Javascript / Python / C / Scala / Chisel / OCaml / MIPS'
+        skills: 'Javascript / Typescript / Java / Python / Kotlin / Rust / C / Scala / Chisel / OCaml / MIPS'
     },
     backend: {
         label: { en: 'Backend and Databases', ge: 'Backend und Datenbanken' },

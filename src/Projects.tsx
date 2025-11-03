@@ -15,6 +15,7 @@ const SKILL_COLORS = {
     java: "text-orange-600 dark:text-orange-400 font-semibold",
     python: "text-blue-600 dark:text-blue-400 font-semibold",
     javascript: "text-yellow-600 dark:text-yellow-500 font-semibold",
+    typescript: "text-blue-700 dark:text-blue-400 font-semibold",
     ocaml: "text-blue-700 dark:text-blue-300 font-semibold",
     django: "text-green-700 dark:text-green-400 font-semibold",
     scala: "text-red-700 dark:text-red-300 font-semibold",
@@ -32,8 +33,16 @@ const SKILL_COLORS = {
     react: "text-cyan-500 dark:text-cyan-400 font-semibold",
     "next.js": "text-black dark:text-white font-semibold",
     "tailwind css": "text-cyan-600 dark:text-cyan-400 font-semibold",
+    "tailwind-css": "text-cyan-600 dark:text-cyan-400 font-semibold",
     selenium: "text-green-700 dark:text-green-400 font-semibold",
+    "google-gemini-api": "text-violet-600 dark:text-violet-400 font-semibold",
+    "json-handling": "text-amber-600 dark:text-amber-400 font-semibold",
+    "system-testing": "text-rose-600 dark:text-rose-400 font-semibold",       // new
+    "unit-testing": "text-emerald-600 dark:text-emerald-400 font-semibold",   // new
+    "integration-testing": "text-indigo-600 dark:text-indigo-400 font-semibold", // new
 };
+
+
 
 // skill categories
 const SKILL_CATEGORIES = {
@@ -61,6 +70,12 @@ export default function Projects({ language }: ProjectProps) {
     const t = translations[language];
 
     const projects = [
+        {
+            id: 'cvchecker',
+            name: t.project_list.cvchecker,
+            url: 'https://github.com/TheGuy-26/intelliapply',
+            skills: ['react', 'typescript', 'tailwind-css', 'google-gemini-api', 'json-handling']
+        },
         {
             id: 'sopra24',
             name: t.project_list.sopra24,

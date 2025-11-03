@@ -4,6 +4,7 @@ export const translations = {
       skills: "Skills",
       projects: "My Programming Projects",
       project_list: {
+          cvchecker: "CV Checker",
           concurrent: "Agent-Based Virus Simulation",
           bde: "Social Network with Reputation System",
           sys1: "Hardware Design with Chisel – Bit Manipulation and RISC-V Extension",
@@ -13,6 +14,10 @@ export const translations = {
           sopra24: "Ocean Cleanup Simulation"
       },
       project_descriptions: {
+          cvchecker: "IntelliApply is an AI-powered dashboard designed to streamline and optimize the job search process. The application enables users to upload their CV and manage job opportunities through a pipeline system. Leveraging the Google Gemini API, it performs a detailed analysis of the user's resume against each job description, generating a percentage-based match score, " +
+              "a qualitative summary, and a breakdown of matching and missing skills. To accelerate the application workflow, the system also automatically drafts a professionally written, tailored cover letter for each position.\n\nBeyond the core analysis, IntelliApply offers an AI-driven CV improvement feature that provides actionable suggestions for enhancing a resume to better fit" +
+              " a specific role, including recommending new bullet points and modifications to existing content. The user interface, built with React and Tailwind CSS, is organized into a 'Job Pipeline' for prospective roles and an 'Application History' to track submitted applications. Key features include a configurable match score threshold, dual-language support (English and German), " +
+              "and local storage persistence for tracking applied jobs.",
           conc: "In this proejct we developed an agent-based simulation model to predict the spread of the fictional Pincer Pox virus. The system models individual agents moving in a 2D grid, each with infection states (susceptible, infected, infectious, recovered). It simulates behavior such as movement, coughing, breathing, and virus transmission within a defined radius.\n\n"+
               "To improve performance, we parallelized the simulation using spatial partitioning (patches with padding). Each patch is simulated independently for several ticks before synchronizing with neighboring patches, ensuring deterministic results while minimizing communication overhead. This approach enables efficient and scalable concurrent simulations.",
           bde: "In this project, we developed a proof-of-concept social network that integrates a skill-based reputation system called Fame Profiles, where users’ expertise and credibility influence their interactions on the platform. Starting from an existing Django-based application, we implemented logic to prevent users from posting content in areas where they " +
@@ -48,6 +53,7 @@ export const translations = {
     skills: "Fähigkeiten",
     projects: "Meine Programmierprojekte",
     project_list: {
+        cvchecker: "Lebenslauf-Prüfer",
         concurrent: "Agentenbasierte Virus-Simulation",
         bde: "Soziales Netzwerk mit Reputationssystem",
         sys1: "Hardware-Design mit Chisel – Bit-Manipulation und RISC-V-Erweiterung",
@@ -57,6 +63,10 @@ export const translations = {
         sopra24: "Ozean-Reinigungs-Simulation"
     },
       project_descriptions: {
+          cvchecker: "IntelliApply ist ein KI-gestütztes Dashboard, das den Bewerbungsprozess optimiert und vereinfacht. Die Anwendung ermöglicht es Benutzern, ihren Lebenslauf hochzuladen und Stellenangebote in einem Pipeline-System zu verwalten. Mithilfe der Google Gemini API führt es eine detaillierte Analyse des Lebenslaufs im Vergleich zu jeder Stellenbeschreibung durch und generiert einen prozentualen Übereinstimmungswert, " +
+              "eine qualitative Zusammenfassung sowie eine Aufschlüsselung passender und fehlender Fähigkeiten. Um den Bewerbungsprozess zu beschleunigen, erstellt das System zudem automatisch ein professionell formuliertes, maßgeschneidertes Anschreiben für jede Position.\n\nÜber die Kernanalyse hinaus bietet IntelliApply eine KI-gesteuerte Funktion zur Lebenslaufverbesserung, die konkrete Vorschläge zur Optimierung des Lebenslaufs " +
+              "für eine bestimmte Stelle liefert, einschließlich Empfehlungen für neue Stichpunkte und Änderungen an bestehenden Inhalten. Die Benutzeroberfläche, entwickelt mit React und Tailwind CSS, ist in eine 'Job-Pipeline' für potenzielle Stellen und eine 'Bewerbungshistorie' zur Nachverfolgung eingereichter Bewerbungen unterteilt. Zu den Hauptfunktionen gehören ein konfigurierbarer Schwellenwert für die Übereinstimmung, Mehrsprachigkeit (Englisch und Deutsch) " +
+              "und die Speicherung der Bewerbungshistorie im lokalen Speicher des Browsers.",
           conc: "In diesem Projekt haben wir ein agentenbasiertes Simulationsmodell entwickelt, um die Ausbreitung des fiktiven Virus Pincer Pox vorherzusagen. Das System modelliert einzelne Agenten, die sich auf einem 2D-Raster bewegen und verschiedene Infektionszustände haben (empfänglich, infiziert, ansteckend, genesen). Es simuliert Verhalten wie Bewegung, Husten, Atmen und die Virusübertragung in einem bestimmten Radius.\n\n" +
               "Zur Leistungssteigerung haben wir die Simulation durch räumliche Aufteilung (Bereiche mit Pufferzonen) parallelisiert. Jeder Bereich wird für mehrere Zeitschritte unabhängig simuliert, bevor er sich mit benachbarten Bereichen synchronisiert. Dadurch bleiben die Ergebnisse deterministisch, während der Kommunikationsaufwand gering bleibt. Dieser Ansatz ermöglicht effiziente und skalierbare parallele Simulationen.",
 

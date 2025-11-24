@@ -73,7 +73,7 @@ export default function Projects({ language }: ProjectProps) {
         {
             id: 'cvchecker',
             name: t.project_list.cvchecker,
-            url: 'https://github.com/TheGuy-26/intelliapply',
+            url: 'https://www.sivy.pro',
             skills: ['react', 'typescript', 'tailwind-css', 'google-gemini-api', 'json-handling']
         },
         {

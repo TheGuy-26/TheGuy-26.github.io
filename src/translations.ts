@@ -11,7 +11,8 @@ export const translations = {
           sys2: "System Programming and Exception Handling on RISC-V",
           prog1: "MiniOCaml – Interpreter for a Functional Language",
           election_software: "School Election Management System",
-          sopra24: "Ocean Cleanup Simulation"
+          sopra24: "Ocean Cleanup Simulation",
+          tictactoe: "Tic-Tac-Toe with Q-Learning"
       },
       project_descriptions: {
           cvchecker: "IntelliApply is an AI-powered dashboard designed to streamline and optimize the job search process. The application enables users to upload their CV and manage job opportunities through a pipeline system. Leveraging the Google Gemini API, it performs a detailed analysis of the user's resume against each job description, generating a percentage-based match score, " +
@@ -44,7 +45,10 @@ export const translations = {
           sopra24: "In this group project, we designed and implemented a simulation called “Ocean Cleanup: Save the Saardines”, where multiple corporations deploy fleets of ships to clean different types of ocean garbage. Working in a team of 5–7 members, we developed the simulator from scratch—starting with system design, UML diagrams, and state modeling, and moving to " +
               "full implementation and testing. The simulation features a hex-tiled ocean map with garbage, ships, corporations, events, and realistic behaviors such as movement, collection, and resource management.\n\n We focused on clean architecture, collaborative development, and high-quality code, supported by unit, integration, and system testing. The project emphasized " +
               "adaptability by requiring our design to handle mid-project specification changes and included strict submission, tooling, and documentation standards. Through this, we gained practical experience in software engineering workflows, simulation modeling, teamwork, and rigorous testing practices.\n\n " +
-              "Project developed as part of university coursework (code not publicly available)"
+              "Project developed as part of university coursework (code not publicly available)",
+          tictactoe: "This project implements a Tic-Tac-Toe game with an AI agent trained using Q-learning, a reinforcement learning algorithm. The agent learns optimal strategies by playing thousands of games against a random opponent, updating its Q-table based on rewards received for wins, losses, and draws.\n\n" +
+              "The implementation features an interactive game board where users can play against the trained AI or watch it train in real-time. The training process includes visualizations showing the agent's learning progress through charts tracking wins, losses, draws, and episode rewards over time. The Q-learning algorithm uses an ε-greedy policy to balance exploration and exploitation, gradually improving its performance as training progresses.\n\n" +
+              "Built with React and TypeScript, the project demonstrates practical applications of reinforcement learning in game AI, showcasing how an agent can learn optimal strategies through trial and error without explicit programming of game rules."
       }
   },
 
@@ -60,7 +64,8 @@ export const translations = {
         sys2: "Systemprogrammierung und Ausnahmebehandlung auf RISC-V",
         prog1: "MiniOCaml – Interpreter für funktionale Sprache",
         election_software: "School Election Management System",
-        sopra24: "Ozean-Reinigungs-Simulation"
+        sopra24: "Ozean-Reinigungs-Simulation",
+        tictactoe: "Tic-Tac-Toe mit Q-Learning"
     },
       project_descriptions: {
           cvchecker: "IntelliApply ist ein KI-gestütztes Dashboard, das den Bewerbungsprozess optimiert und vereinfacht. Die Anwendung ermöglicht es Benutzern, ihren Lebenslauf hochzuladen und Stellenangebote in einem Pipeline-System zu verwalten. Mithilfe der Google Gemini API führt es eine detaillierte Analyse des Lebenslaufs im Vergleich zu jeder Stellenbeschreibung durch und generiert einen prozentualen Übereinstimmungswert, " +
@@ -88,7 +93,10 @@ export const translations = {
               "Alle Wahldaten, einschließlich Wählerlisten und Ergebnisse, werden in einer SQL-Datenbank gespeichert, was Genauigkeit und Beständigkeit über mehrere Sitzungen hinweg gewährleistet. Das Projekt wurde mit Fokus auf Benutzerfreundlichkeit und Lernen entwickelt und bot praktische Erfahrungen mit JavaFX für GUI-Entwicklung, SQL-Integration und objektorientierter Programmierung in Java.",
           sopra24: "In diesem Gruppenprojekt entwickelten wir eine Simulation namens „Ocean Cleanup: Save the Saardines“, bei der verschiedene Firmen mit ihren Schiffen versuchen, den Ozean von Müll zu befreien. In einem Team von 5–7 Personen planten wir zuerst das System mit UML-Diagrammen und einem Ablaufplan und setzten es dann komplett um. Die Simulation läuft auf einer Karte aus sechseckigen Feldern (Hex-Feldern), auf denen Müll, Schiffe, Firmen und Ereignisse platziert sind. " +
               "Die Schiffe bewegen sich, sammeln Müll ein und müssen Ressourcen wie Treibstoff beachten.\n\n Wir legten viel Wert auf eine saubere Software-Struktur, Zusammenarbeit im Team und gute Code-Qualität mit Unit-, Integrations- und Systemtests. Außerdem musste unser Design so flexibel sein, dass es nachträgliche Änderungen in der Aufgabenstellung aufnehmen konnte. Durch dieses Projekt sammelte ich praktische Erfahrungen in Softwareentwicklung, Simulationen, Teamarbeit und professionellem Testen.\n\n " +
-              "Im Rahmen eines Universitätsprojekts entwickelt (Code nicht öffentlich zugänglich)"
+              "Im Rahmen eines Universitätsprojekts entwickelt (Code nicht öffentlich zugänglich)",
+          tictactoe: "Dieses Projekt implementiert ein Tic-Tac-Toe-Spiel mit einem KI-Agenten, der mit Q-Learning, einem Reinforcement-Learning-Algorithmus, trainiert wird. Der Agent lernt optimale Strategien, indem er Tausende von Spielen gegen einen zufälligen Gegner spielt und seine Q-Tabelle basierend auf Belohnungen für Siege, Niederlagen und Unentschieden aktualisiert.\n\n" +
+              "Die Implementierung bietet ein interaktives Spielfeld, auf dem Benutzer gegen den trainierten KI-Agenten spielen oder ihn in Echtzeit trainieren sehen können. Der Trainingsprozess umfasst Visualisierungen, die den Lernfortschritt des Agenten durch Diagramme zeigen, die Siege, Niederlagen, Unentschieden und Episodenbelohnungen über die Zeit verfolgen. Der Q-Learning-Algorithmus verwendet eine ε-greedy-Politik, um Exploration und Exploitation auszubalancieren und seine Leistung mit fortschreitendem Training schrittweise zu verbessern.\n\n" +
+              "Das mit React und TypeScript entwickelte Projekt demonstriert praktische Anwendungen von Reinforcement Learning in Spiel-KI und zeigt, wie ein Agent optimale Strategien durch Versuch und Irrtum lernen kann, ohne explizite Programmierung der Spielregeln."
       }
   }
 };

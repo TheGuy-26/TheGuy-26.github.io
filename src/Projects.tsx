@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { translations } from "./translations";
+import TicTacToeRL from "./pages/TicTacToeRL";
 
 interface ProjectProps {
     language: 'en' | 'ge'
@@ -116,6 +117,11 @@ export default function Projects({ language }: ProjectProps) {
             name: t.project_list.election_software,
             url: 'https://github.com/TheGuy-26/VotingSoftware',
             skills: ['java']
+        },
+        {
+            id: 'tictactoe',
+            name: t.project_list.tictactoe,
+            skills: ['react', 'typescript', 'tailwind-css']
         }
     ];
 
@@ -191,37 +197,69 @@ export default function Projects({ language }: ProjectProps) {
                 <h2 className="text-xl font-semibold opacity-0"> {t.projects} </h2>
                 <div ref={stickyElementRef} className="lg:sticky lg:top-4 lg:h-fit">
                     {selectedProject ? (
-                        <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
-                            <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">
-                                {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
-                            </p>
+                        selectedProject === 'tictactoe' ? (
+                            <div className="border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 overflow-hidden">
+                                <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+                                    <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">
+                                        {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
+                                    </p>
 
-                            {/* Skills section */}
-                            <div className="mb-4">
-                                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                                    {language === 'en' ? 'Skills:' : 'Fähigkeiten:'}
-                                </p>
-                                <div className="flex flex-wrap gap-3">
-                                    {projects.find(p => p.id === selectedProject)?.skills.map((skill, idx) => (
-                                        <span
-                                            key={idx}
-                                            className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
-                                        >
-                                            {skill.charAt(0).toUpperCase() + skill.slice(1)}
-                                        </span>
-                                    ))}
+                                    {/* Skills section */}
+                                    <div className="mb-4">
+                                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                            {language === 'en' ? 'Skills:' : 'Fähigkeiten:'}
+                                        </p>
+                                        <div className="flex flex-wrap gap-3">
+                                            {projects.find(p => p.id === selectedProject)?.skills.map((skill, idx) => (
+                                                <span
+                                                    key={idx}
+                                                    className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
+                                                >
+                                                    {skill.charAt(0).toUpperCase() + skill.slice(1)}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-white dark:bg-gray-900">
+                                    <TicTacToeRL />
                                 </div>
                             </div>
+                        ) : (
+                            <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                                <p className="text-gray-700 dark:text-gray-300 mb-4 whitespace-pre-wrap">
+                                    {t.project_descriptions[selectedProject as keyof typeof t.project_descriptions]}
+                                </p>
 
-                            <a
-                                href={projects.find(p => p.id === selectedProject)?.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                            >
-                                View on GitHub →
-                            </a>
-                        </div>
+                                {/* Skills section */}
+                                <div className="mb-4">
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                                        {language === 'en' ? 'Skills:' : 'Fähigkeiten:'}
+                                    </p>
+                                    <div className="flex flex-wrap gap-3">
+                                        {projects.find(p => p.id === selectedProject)?.skills.map((skill, idx) => (
+                                            <span
+                                                key={idx}
+                                                className={`px-3 py-1 rounded-full text-sm bg-gray-200 dark:bg-gray-700 ${getSkillColor(skill)}`}
+                                            >
+                                                {skill.charAt(0).toUpperCase() + skill.slice(1)}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {projects.find(p => p.id === selectedProject)?.url && (
+                                    <a
+                                        href={projects.find(p => p.id === selectedProject)?.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                                    >
+                                        View on GitHub →
+                                    </a>
+                                )}
+                            </div>
+                        )
                     ) : (
                         <div className="p-4 border rounded-lg bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400">
                             {language === 'en' ? 'Select a project to view details' : 'Wählen Sie ein Projekt aus, um Details anzuzeigen'}

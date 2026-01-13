@@ -61,8 +61,8 @@ export default function Home({ language }: HomeProps) {
                     </div>
                     <div className="ml-4 text-green-300/70 text-xs space-y-1">
                         <div>• React, TypeScript, Python, Rust, Java</div>
-                        <div>• System Programming, Hardware Design</div>
-                        <div>• Machine Learning, Reinforcement Learning</div>
+                        <div>• System Programming, Software Design</div>
+                        <div>• Artificial Intelligence, Reinforcement Learning</div>
                     </div>
                     <div className="mt-3">
                         <Link 

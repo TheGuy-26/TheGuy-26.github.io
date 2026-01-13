@@ -7,19 +7,11 @@
   <meta name="description" content="About me and my projects">
   <meta name="robots" content="index,follow">
   <script>
-    (() => {
-      const getStoredTheme = localStorage.getItem('theme');
-      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const shouldBeDark = getStoredTheme? getStoredTheme === 'dark': preferredTheme;
-      if (shouldBeDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
+    // Always use dark mode
+    document.documentElement.classList.add('dark');
   </script>
-  <script type="module" crossorigin src="/assets/index-C39qoFCk.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-B-ap-nCp.css">
+  <script type="module" crossorigin src="/assets/index-CDDPqHn5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DbkEuNz2.css">
 </head>
 <body>
   <div id="root"></div>

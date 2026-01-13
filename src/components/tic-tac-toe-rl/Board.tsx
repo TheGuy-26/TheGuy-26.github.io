@@ -24,7 +24,7 @@ const Board: React.FC<BoardProps> = ({
     };
 
     return (
-        <div className="flex flex-col items-center gap-1 p-5 bg-slate-50 dark:bg-gray-700 rounded-lg shadow-md">
+        <div className="flex flex-col items-center gap-1 p-5 bg-black/30 border border-green-500/20">
             {board.map((row, rowIndex) => (
                 <div key={rowIndex} className="flex gap-1">
                     {row.map((cell, colIndex) => (

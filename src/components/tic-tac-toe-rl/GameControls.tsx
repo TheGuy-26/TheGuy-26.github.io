@@ -20,13 +20,16 @@ const GameControls: React.FC<GameControlsProps> = ({
                                                        trainingProgress = 0
                                                    }) => {
     return (
-        <div className="flex flex-col gap-4 p-5 bg-white dark:bg-gray-800 rounded-lg shadow-md max-w-xs">
-            <h3 className="m-0 mb-2 text-gray-900 dark:text-white font-semibold">Game Controls</h3>
+        <div className="flex flex-col gap-4 p-5 bg-black/30 border border-green-500/30 max-w-xs">
+            <div className="flex items-start gap-2 mb-2">
+                <span className="text-green-500">→</span>
+                <h3 className="text-sm font-semibold text-green-300">Game Controls</h3>
+            </div>
 
             <div className="flex gap-2 flex-wrap">
                 <button
                     onClick={onReset}
-                    className="px-5 py-2 bg-red-500 hover:bg-red-600 text-white border-none rounded cursor-pointer font-bold flex-1 transition-colors"
+                    className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/40 rounded cursor-pointer font-bold flex-1 transition-all text-sm"
                 >
                     Reset Game
                 </button>
@@ -34,10 +37,10 @@ const GameControls: React.FC<GameControlsProps> = ({
                 <button
                     onClick={onPlayVsHuman}
                     disabled={isPlayingVsAI || isTraining}
-                    className={`px-5 py-2 text-white border-none rounded font-bold flex-1 transition-colors ${
+                    className={`px-4 py-2 border rounded font-bold flex-1 transition-all text-sm ${
                         isPlayingVsAI || isTraining
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-blue-500 hover:bg-blue-600 cursor-pointer'
+                            ? 'bg-gray-500/20 border-gray-500/40 text-gray-500 cursor-not-allowed'
+                            : 'bg-cyan-500/20 hover:bg-cyan-500/30 border-cyan-500/40 text-cyan-400 cursor-pointer'
                     }`}
                 >
                     Play vs Human
@@ -46,10 +49,10 @@ const GameControls: React.FC<GameControlsProps> = ({
                 <button
                     onClick={onPlayVsAI}
                     disabled={isTraining}
-                    className={`px-5 py-2 text-white border-none rounded font-bold flex-1 transition-colors ${
+                    className={`px-4 py-2 border rounded font-bold flex-1 transition-all text-sm ${
                         isTraining
-                            ? 'bg-gray-400 cursor-not-allowed'
-                            : 'bg-green-500 hover:bg-green-600 cursor-pointer'
+                            ? 'bg-gray-500/20 border-gray-500/40 text-gray-500 cursor-not-allowed'
+                            : 'bg-green-500/20 hover:bg-green-500/30 border-green-500/40 text-green-400 cursor-pointer'
                     }`}
                 >
                     Play vs AI
@@ -60,7 +63,7 @@ const GameControls: React.FC<GameControlsProps> = ({
                 <button
                     onClick={onTrain}
                     disabled={isTraining}
-                    className={`w-full py-3 bg-amber-500 hover:bg-amber-600 text-white border-none rounded font-bold mb-2 transition-colors ${
+                    className={`w-full py-2 bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 border border-yellow-500/40 rounded font-bold mb-2 transition-all text-sm ${
                         isTraining ? 'cursor-not-allowed opacity-75' : 'cursor-pointer'
                     }`}
                 >
@@ -69,20 +72,20 @@ const GameControls: React.FC<GameControlsProps> = ({
 
                 {isTraining && (
                     <div className="mt-2">
-                        <div className="w-full h-5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                        <div className="w-full h-3 bg-black/50 border border-green-500/30 rounded-full overflow-hidden">
                             <div
                                 className="h-full bg-green-500 transition-all duration-300"
                                 style={{ width: `${trainingProgress}%` }}
                             />
                         </div>
-                        <p className="text-center mt-1 text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-center mt-1 text-xs text-green-400/70">
                             {Math.round(trainingProgress)}%
                         </p>
                     </div>
                 )}
             </div>
 
-            <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-2 text-xs text-green-400/60">
                 <p>Click on an empty cell to make a move</p>
                 <p>AI uses Q-learning with ε-greedy policy</p>
             </div>

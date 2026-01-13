@@ -1,15 +1,5 @@
 import {useEffect, useState} from "react";
-
-function getInitialTheme(): 'light' | 'dark' {
-    try {
-        const storedTheme = typeof window !== 'undefined'? localStorage.getItem('theme'): null;
-        if (storedTheme === 'dark' || storedTheme === 'light') return storedTheme;
-        const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        return prefersDark ? 'dark' : 'light';
-    } catch {
-        return 'light';
-    }
-}
+import { Link, useLocation } from "react-router-dom";
 
 function getInitialLanguage(): 'en' | 'ge' {
     try {
@@ -27,23 +17,6 @@ function getInitialLanguage(): 'en' | 'ge' {
     catch {
         return 'en';
     }
-}
-
-export function useTheme() {
-    const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme);
-
-    useEffect(() => {
-        const root = document.documentElement;
-        if (theme === 'dark') root.classList.add('dark'); else root.classList.remove('dark');
-        try {
-            localStorage.setItem('theme', theme);
-        } catch {
-            // ignore write errors (e.g., private mode)
-        }
-    }, [theme]);
-
-    const toggle = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'));
-    return { theme, toggle };
 }
 
 export function useLanguage() {
@@ -69,40 +42,58 @@ interface HeaderProps {
 }
 
 export default function Header({ language, toggleLanguage }: HeaderProps) {
-    const { theme, toggle: toggleTheme } = useTheme();
+    const location = useLocation();
+
+    const isActive = (path: string) => location.pathname === path;
 
     return (
-        <header className="flex items-center justify-between px-5 py-5 bg-white text-black dark:bg-black dark:text-white">
-            <h1 className="text-lg">Dujana Abrar</h1>
-            <div className="flex items-center gap-2">
+        <header className="flex items-center justify-between px-6 py-4 terminal-bg border-b border-green-500/20">
+            <div className="flex items-center gap-4">
+                <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <span className="text-green-400 font-bold text-lg glow-green">$</span>
+                    <h1 className="text-green-400 font-bold text-lg">dujana@portfolio:~</h1>
+                </Link>
+                <nav className="hidden md:flex items-center gap-4 ml-6">
+                    <Link 
+                        to="/" 
+                        className={`text-sm transition-colors ${
+                            isActive('/') 
+                                ? 'text-green-300 border-b border-green-500' 
+                                : 'text-green-400/70 hover:text-green-300'
+                        }`}
+                    >
+                        ~/home
+                    </Link>
+                    <Link 
+                        to="/projects" 
+                        className={`text-sm transition-colors ${
+                            isActive('/projects') 
+                                ? 'text-green-300 border-b border-green-500' 
+                                : 'text-green-400/70 hover:text-green-300'
+                        }`}
+                    >
+                        ~/projects
+                    </Link>
+                    <Link 
+                        to="/tictactoe" 
+                        className={`text-sm transition-colors ${
+                            isActive('/tictactoe') 
+                                ? 'text-green-300 border-b border-green-500' 
+                                : 'text-green-400/70 hover:text-green-300'
+                        }`}
+                    >
+                        ./tic-tac-toe-rl
+                    </Link>
+                </nav>
+            </div>
+            <div className="flex items-center gap-3">
                 <button
                     type="button"
                     onClick={toggleLanguage}
                     aria-label="Toggle language"
-                    className="px-3 py-1.5"
+                    className="px-3 py-1.5 text-green-400 hover:text-green-300 hover:bg-green-500/10 rounded border border-green-500/30 transition-colors"
                 >
                     {language === 'en'? 'DE': 'EN'}
-                </button>
-                <button
-                    type="button"
-                    onClick={toggleTheme}
-                    aria-pressed={theme === 'dark'}
-                    aria-label="Toggle dark mode"
-                    className="px-3 py-1.5"
-                >
-                {theme === 'dark' ?
-                    (
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clipRule="evenodd" />
-                        </svg>
-                    )
-                    :
-                    (
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-                        </svg>
-                    )
-                }
                 </button>
             </div>
         </header>

@@ -19,18 +19,18 @@ const Cell: React.FC<CellProps> = ({
                                        isHighlighted = false
                                    }) => {
     const getCellClasses = () => {
-        const baseClasses = "w-20 h-20 border-2 border-gray-800 dark:border-gray-300 flex items-center justify-center text-3xl font-bold transition-colors duration-300";
-        const cursorClass = value ? 'cursor-default' : 'cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600';
+        const baseClasses = "w-20 h-20 border-2 border-green-500/40 flex items-center justify-center text-3xl font-bold transition-all duration-300";
+        const cursorClass = value ? 'cursor-default' : 'cursor-pointer hover:bg-green-500/20 hover:border-green-500/60';
         
-        let bgClass = 'bg-white dark:bg-gray-800';
+        let bgClass = 'bg-black/50';
         if (isWinningCell) {
-            bgClass = 'bg-green-400 dark:bg-green-600';
+            bgClass = 'bg-green-500/30 border-green-500 glow-green';
         } else if (isHighlighted) {
-            bgClass = 'bg-yellow-100 dark:bg-yellow-900';
+            bgClass = 'bg-yellow-500/20 border-yellow-500/50';
         } else if (value === 'X') {
-            bgClass = 'bg-blue-50 dark:bg-blue-900';
+            bgClass = 'bg-cyan-500/10 border-cyan-500/40';
         } else if (value === 'O') {
-            bgClass = 'bg-red-50 dark:bg-red-900';
+            bgClass = 'bg-red-500/10 border-red-500/40';
         }
         
         return `${baseClasses} ${cursorClass} ${bgClass}`;
@@ -47,8 +47,8 @@ const Cell: React.FC<CellProps> = ({
             className={getCellClasses()}
             onClick={handleClick}
         >
-            {value === 'X' && <span className="text-blue-600 dark:text-blue-400">X</span>}
-            {value === 'O' && <span className="text-red-600 dark:text-red-400">O</span>}
+            {value === 'X' && <span className="text-cyan-400 glow-cyan">X</span>}
+            {value === 'O' && <span className="text-red-400">O</span>}
         </div>
     );
 };

@@ -7,16 +7,8 @@
   <meta name="description" content="About me and my projects">
   <meta name="robots" content="index,follow">
   <script>
-    (() => {
-      const getStoredTheme = localStorage.getItem('theme');
-      const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const shouldBeDark = getStoredTheme? getStoredTheme === 'dark': preferredTheme;
-      if (shouldBeDark) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
+    // Always use dark mode
+    document.documentElement.classList.add('dark');
   </script>
 </head>
 <body>

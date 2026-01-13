@@ -92,41 +92,48 @@ const TrainingStats: React.FC<TrainingStatsProps> = ({
     };
 
     return (
-        <div className="flex flex-col gap-5 p-5 bg-white dark:bg-gray-800 rounded-lg shadow-md max-w-4xl">
-            <h3 className="m-0 text-gray-900 dark:text-white font-semibold">Training Statistics</h3>
+        <div className="flex flex-col gap-5 p-5 bg-black/30 border border-green-500/30 max-w-4xl">
+            <div className="flex items-start gap-2">
+                <span className="text-green-500">→</span>
+                <h3 className="text-sm font-semibold text-green-300">Training Statistics</h3>
+            </div>
 
             <div className="flex gap-5 flex-wrap">
                 <div className="flex-1 min-w-[300px]">
-                    <h4 className="m-0 mb-2 text-gray-600 dark:text-gray-400">Game Results</h4>
-                    <Line data={resultsChartData} options={chartOptions} />
+                    <h4 className="m-0 mb-2 text-xs text-green-400/70">Game Results</h4>
+                    <div className="bg-black/50 p-2 border border-green-500/20">
+                        <Line data={resultsChartData} options={chartOptions} />
+                    </div>
                 </div>
 
                 <div className="flex-1 min-w-[300px]">
-                    <h4 className="m-0 mb-2 text-gray-600 dark:text-gray-400">Episode Rewards</h4>
-                    <Line data={rewardsChartData} options={chartOptions} />
+                    <h4 className="m-0 mb-2 text-xs text-green-400/70">Episode Rewards</h4>
+                    <div className="bg-black/50 p-2 border border-green-500/20">
+                        <Line data={rewardsChartData} options={chartOptions} />
+                    </div>
                 </div>
             </div>
 
             <div className="flex gap-5 justify-center mt-2">
                 <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 dark:text-green-400">
+                    <div className="text-2xl font-bold text-green-400">
                         {wins[wins.length - 1] || 0}
                     </div>
-                    <div className="text-gray-600 dark:text-gray-400">Last Win</div>
+                    <div className="text-xs text-green-400/60">Last Win</div>
                 </div>
 
                 <div className="text-center">
-                    <div className="text-3xl font-bold text-red-600 dark:text-red-400">
+                    <div className="text-2xl font-bold text-red-400">
                         {losses[losses.length - 1] || 0}
                     </div>
-                    <div className="text-gray-600 dark:text-gray-400">Last Loss</div>
+                    <div className="text-xs text-green-400/60">Last Loss</div>
                 </div>
 
                 <div className="text-center">
-                    <div className="text-3xl font-bold text-amber-600 dark:text-amber-400">
+                    <div className="text-2xl font-bold text-yellow-400">
                         {draws[draws.length - 1] || 0}
                     </div>
-                    <div className="text-gray-600 dark:text-gray-400">Last Draw</div>
+                    <div className="text-xs text-green-400/60">Last Draw</div>
                 </div>
             </div>
         </div>

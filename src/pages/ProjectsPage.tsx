@@ -37,6 +37,12 @@ export default function ProjectsPage({ language }: ProjectsPageProps) {
 
     const projects = [
         {
+            id: 'tictactoe',
+            name: t.project_list.tictactoe,
+            skills: ['react', 'typescript', 'tailwind-css', 'reinforcement learning'],
+            isInteractive: true
+        },
+        {
             id: 'sopra24',
             name: t.project_list.sopra24,
             skills: ['kotlin', 'system-testing', 'unit-testing', 'integration-testing']
@@ -76,12 +82,6 @@ export default function ProjectsPage({ language }: ProjectsPageProps) {
             name: t.project_list.election_software,
             url: 'https://github.com/TheGuy-26/VotingSoftware',
             skills: ['java']
-        },
-        {
-            id: 'tictactoe',
-            name: t.project_list.tictactoe,
-            skills: ['react', 'typescript', 'tailwind-css', 'reinforcement learning'],
-            isInteractive: true
         }
     ];
 

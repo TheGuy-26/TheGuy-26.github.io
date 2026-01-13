@@ -72,12 +72,6 @@ export default function Projects({ language }: ProjectProps) {
 
     const projects = [
         {
-            id: 'cvchecker',
-            name: t.project_list.cvchecker,
-            url: 'https://www.sivy.pro',
-            skills: ['react', 'typescript', 'tailwind-css', 'google-gemini-api', 'json-handling']
-        },
-        {
             id: 'sopra24',
             name: t.project_list.sopra24,
             skills: ['kotlin', 'system-testing', 'unit-testing', 'integration-testing']
@@ -121,7 +115,7 @@ export default function Projects({ language }: ProjectProps) {
         {
             id: 'tictactoe',
             name: t.project_list.tictactoe,
-            skills: ['react', 'typescript', 'tailwind-css']
+            skills: ['react', 'typescript', 'tailwind-css', 'reinforcement learning']
         }
     ];
 
